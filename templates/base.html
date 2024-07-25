@@ -1,0 +1,81 @@
+{% load static %}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{% static "css/main-content.css" %}">
+    <link rel="stylesheet" href="{% static "css/header.css" %}">
+    <link rel="stylesheet" href="{% static "css/footer.css" %}">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static "favicon/apple-touch-icon.png" %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static "favicon/favicon-32x32.png" %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static "favicon/favicon-16x16.png" %}">
+    <link rel="manifest" href="{% static "favicon/site.webmanifest" %}">
+
+    <script src="http://kit.fontawesome.com/bfec730d56.js"
+    crossorigin="anonymous"></script>
+
+    <title>{{ title }}</title>
+    
+</head>
+<body>
+    
+    <div class="wrapper">
+
+        <header>
+            <div class="nav">
+                <div class="drop">
+                    <div class="logo-container">
+                        <a href="index.html"><img src="{% static "favicon/favicon-32x32.png" %}" alt="" class="logo"></a>
+                    </div>
+                    <div class="nav-list">
+                        <a href="{% url "main:index" %}">Главная</a>
+                        <a href="{% url "main:about" %}">О нас</a>
+                        <a href="catalog.html">Каталог</a>
+                        <a href="cart.html">Корзина</i></a>
+                        <a href="login.html">Войти</a>
+                    </div>
+                    <button class="nav-btn">&#9776;</button>
+                </div>
+            </div>
+        </header>
+
+        <section class="main">                  
+            {% block content %}{% endblock  %}
+        </section>
+
+        <footer>
+            <div class="footer">
+                <div class="drop-footer">
+                    <div class="footer-left">
+                        <h3>Часы работы</h3>
+                        <p><i class="fas fa-clock"></i> Понедельник - Пятница с 9:00 до 21:00</p>
+                        <p><i class="fas fa-clock"></i> Суббота - Воскресенье с 11:00 до 19:00</p>
+                    </div>
+                    <div class="social-links">
+                        <i class="fab fa-instagram-square"></i>
+                        <i class="fab fa-facebook-square"></i>
+                        <i class="fab fa-instagram-square"></i>
+                        <i class="fab fa-telegram"></i>
+                        <i class="fab fa-twitter"></i>
+                    </div>
+                    <div class="footer-right">
+                        <h3>Контакты</h3>
+                        <p><i class="fas fa-location-arrow"></i> #индекс, Город</p>
+                        <p><i class="fas fa-envelope"></i> #email</p>
+                        <p><i class="fas fa-phone-square-alt"></i> +111 22 33 44 55</p>
+                    </div>
+                    <button class="footer-btn">&#9776;</button>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+</html>
