@@ -36,7 +36,7 @@
                     <div class="nav-list">
                         <a href="{% url "main:index" %}">Главная</a>
                         <a href="{% url "main:about" %}">О нас</a>
-                        <a href="catalog.html">Каталог</a>
+                        <a href="{% url "bicycles:catalog" "all" %}">Велосипеды</a>
                         <a href="cart.html">Корзина</i></a>
                         <a href="login.html">Войти</a>
                     </div>
