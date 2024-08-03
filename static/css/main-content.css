@@ -256,6 +256,7 @@ body {
 
 .form-wrapper {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 420px;
@@ -297,6 +298,16 @@ body {
     top: 50%;
     transform: translateY(-50%);
     font-size: 20px;
+}
+
+.errors-box {
+    background-color: rgba(255, 0, 0, 0.219);
+    color: black;
+    border-radius: 20px 20px 0 0;
+}
+
+.errors-box>ul>li {
+    padding: 1em;    
 }
 
 .remember {

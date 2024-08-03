@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load static %}
+            
+
+{% block content %}
+<div class="form-container">
+    <div class="form-wrapper">
+        {% if form.non_field_errors %}
+        <div class='errors-box'>{{form.non_field_errors}}</div>
+        {% endif %}
+        <!-- Форма входа -->
+        <form action="{% url "users:login" %}" method="post">
+            {% csrf_token %}
+            <h1>Авторизация</h1>
+            <div class="input-box">
+                <input type="text" name='username' 
+                value="{% if form.username.value %}{{ form.username.value }}{% endif %}"
+                placeholder="Username" required>
+                <i class='bx bx-user'></i>
+            </div>
+            <div class="input-box">
+                <input type="password" name="password" placeholder="Password" required>
+                <i class='bx bxs-lock-alt' ></i>
+            </div>
+            <div class="remember">
+                <label for=""><input type="checkbox">Remember me</label>
+                <a href="#">Fogot passsword?</a>
+            </div>
+            <button type="submit" class="login-btn">Войти</button>
+            <!-- Если не зарегестрирован -->
+            <div class="register-link">
+                <p>Don't have an account? <a href="registration.html">Register</a></p>
+            </div>
+        </form>                
+    </div>
+</div> 
+{% endblock  %}

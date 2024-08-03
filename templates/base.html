@@ -38,7 +38,8 @@
                         <a href="{% url "main:about" %}">О нас</a>
                         <a href="{% url "bicycles:catalog" "all" %}">Велосипеды</a>
                         <a href="cart.html">Корзина</i></a>
-                        <a href="login.html">Войти</a>
+                        {% comment %} <a href="#">Войти</a> {% endcomment %}
+                        <a href="{% url "users:login" %}">Войти</a>
                     </div>
                     <button class="nav-btn">&#9776;</button>
                 </div>
