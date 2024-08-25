@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+<div class="container">
+  <div class="shopping-cart">
+      <div class="crt-title">
+        Корзина
+      </div>
+      
+      {% for cart in carts %}
+      <div class="item">
+        <div class="buttons">
+          <a href="{% url "carts:cart_remove" cart.id %}"><img src="static/icons/trash3-fill.svg" alt="" class="delete-btn"></a>
+        </div>
+ 
+        <div class="crt-image">
+          <img src={{ cart.product.image.url }} alt={{ cart.product.name }}>
+        </div>
+ 
+        <div class="description">
+          <span>{{ cart.product.name }}</span>
+        </div>
+ 
+        <div class="quantity">
+          <a href="{% url "carts:cart_increment" cart.id %}"><button class="plus-btn" type="button" name="button">+</button></a>
+          <input type="text" name="name" value={{ cart.quantity }}>
+          <a href="{% url "carts:cart_decrement" cart.id %}"><button class="minus-btn" type="button" name="button">-</button></a>
+        </div>
+ 
+        <div class="total-price">{{ cart.products_price }} ₽</div>
+      </div>
+      {% endfor %}  
+
+      <div class="crt-info">
+        <p>Всего товаров - {% if carts.total_quantity %}{{ carts.total_quantity }}{% else %}0{% endif %}</p>
+        <p>Стоимость корзины - {% if carts.total_price %}{{ carts.total_price }} ₽{% else %}0 ₽{% endif %}</p>
+      </div>
+
+      <div class="crt-order">
+        <a href="#">Купить</a>
+      </div>
+      
+  </div> 
+</div>       
+{% endblock  %}

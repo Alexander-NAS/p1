@@ -38,10 +38,10 @@
                     <div class="card">
                         <img src={{ product.image.url }} alt={{ product.name }}>
                         <div class="card-text">
-                            <p class="Product_name">{{ product.name }}</p>
-                            <p class="Product_description">{{ product.description }}</p>
+                            <p class="Product_name">{{ product.name }} - Цена {{ product.price }} ₽</p>
+                            <p class="Product_description">{{ product.description|truncatechars:225 }}</p>
                             <div class="crt-order">
-                                <a href="#">Добавить в корзину</a>
+                                <a href="{% url "carts:cart_add" product.slug %}">Добавить в корзину</a>
                             </div>
                         </div>
                     </div>

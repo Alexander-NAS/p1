@@ -26,6 +26,7 @@ urlpatterns = [
     path("", include("main.urls", namespace="main")),
     path("Велосипеды/", include("bicycles.urls", namespace="bicycles")),
     path("", include("users.urls", namespace="users")),
+    path("", include("carts.urls", namespace="carts")),
 ]
 
 if settings.DEBUG:

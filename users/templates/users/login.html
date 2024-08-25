@@ -23,13 +23,13 @@
                 <i class='bx bxs-lock-alt' ></i>
             </div>
             <div class="remember">
-                <label for=""><input type="checkbox">Remember me</label>
-                <a href="#">Fogot passsword?</a>
+                <label for=""><input type="checkbox">Запомни меня</label>
+                <a href="#">Забыли пароль?</a>
             </div>
             <button type="submit" class="login-btn">Войти</button>
             <!-- Если не зарегестрирован -->
             <div class="register-link">
-                <p>Don't have an account? <a href="registration.html">Register</a></p>
+                <p>Создать аккаунт? <a href="{% url "users:registration" %}">Регистрация</a></p>
             </div>
         </form>                
     </div>
